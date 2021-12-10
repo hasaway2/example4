@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>값을 입력받아 배열에 저장. 합계와 평균 출력하기</h1>
+    <script>
+        window.onload = function() {
+            let ar = [];
+            let sum = 0;
+            document.querySelector('#input').addEventListener("click", function() {
+                const inputElement = document.querySelector('#value');
+                const arSpan = document.querySelector('#ar');
+                const sumSpan = document.querySelector('#sum');
+                const avgSpan = document.querySelector('#avg');
+                const value = parseInt(inputElement.value);
+
+                // 숫자가 아닌 입력이 들어오면 지워버린다
+                if(isNaN(value)==true) {
+                    inputElement.value = "";
+                    inputElement.focus();
+                    return;
+                }
+                ar.push(value);
+                sum+=value;
+                arSpan.innerHTML = ar;
+                sumSpan.innerHTML = sum;
+                avgSpan.innerHTML = (sum/ar.length);
+                inputElement.value = "";
+                inputElement.focus();
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="value">
+    <button id='input'>입력하기</button>
+    <hr>
+    <div>배열 : <span id='ar'></span></div>
+    <div>합계 : <span id='sum'></span></div>
+    <div>평균 : <span id='avg'></span></div>
+</body>
+</html>

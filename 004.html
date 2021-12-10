@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열에서 최대, 최소를 제외한 합계 출력</h1>
+    <p>const scores = [75,80,65,55,60,85,90,100,70,50,85,92];</p>
+    <script>
+        const scores = [75,80,65,55,60,85,90,100,70,50,85,92];
+        let max = 0;
+        let min = 100;
+        let sum = 0;
+        let result = 0;
+        for(score of scores) {
+            if(score>max) {
+                max = score;
+            }
+            if(score<min) {
+                min = score;
+            }
+            sum+=score;
+        }
+        result = sum - max - min;
+        console.log("최대, 최소를 제외한 합계 : " + result);
+    </script>
+</body>
+</html>

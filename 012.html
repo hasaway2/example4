@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>값을 입력받아 배열에 저장해 출력하기</h1>
+    <script>
+        window.onload = function() {
+            let ar = [];
+            document.querySelector('#input').addEventListener("click", function() {
+                const input = document.querySelector('#value');
+                const result = document.querySelector('#result');
+
+                // 배열에 원소 추가
+                ar.push(input.value);
+                result.innerHTML = ar;
+                input.value = "";
+                input.focus();
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="value">
+    <button id='input'>입력하기</button>
+    <hr>
+    <div id='result'></div>
+</body>
+</html>

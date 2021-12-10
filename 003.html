@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>합격자 숫자, 평균 및 불합격자 숫자, 평균 출력</h1>
+    <p>const scores = [75,80,65,55,60,85,90,100,70,50,85,92];</p>
+    <p>scores 배열을 대상으로 70점이상이면 합격</p>
+    <script>
+        const scores = [75,80,65,55,60,85,90,100,70,50,85,92];
+        let sumOfFail = 0;
+        let countOfFail = 0;
+        let sumOfPass = 0;
+        let countOfPass = 0;
+        for(score of scores) {
+            if(score<70) {
+                sumOfFail+=score;
+                countOfFail++;
+            } else {
+                sumOfPass+=score;
+                countOfPass++;
+            }
+        }
+        console.log("합격자 숫자 : " + countOfPass);
+        console.log("합격자 평균 : " + (sumOfPass/countOfPass));
+        console.log("불합격자 숫자 : " + countOfFail);
+        console.log("불합격자 평균 : " + (sumOfFail/countOfFail));
+    </script>
+</body>
+</html>

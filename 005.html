@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열에서 1, 2등을 제외한 합계를 출력</h1>
+    <p>const scores = [75,80,65,55,60,85,90,100,70,50,85,92];</p>
+    <script>
+        const scores = [75,80,65,55,60,85,90,100,70,50,85,92];
+        let top1 = 0;
+        let top2 = 0;
+        let sum = 0;
+        let result = 0;
+        for(score of scores) {
+            if(score>top1) {
+                top2 = top1;
+                top1 = score;
+            }
+            sum+=score;
+        }
+        result = sum - top1 - top2;
+        console.log("1,2 등을 제외한 합계 : " + result);
+    </script>
+</body>
+</html>

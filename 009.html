@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const endElement = document.querySelector("#end");
+            const btnCheck = document.querySelector("#sum");
+            const result = document.querySelector("#result");
+            btnCheck.addEventListener('click', function() {
+                const end = parseInt(endElement.value);
+                if(isNaN(end)) {
+                    alert("숫자를 입력하세요");
+                    endElement.value="";
+                    endElement.focus();
+                } else if(end<=0){
+                    alert("0보다 큰 숫자를 입력하세요");
+                    endElement.value="";
+                    endElement.focus();
+                } else {
+                    let sum = 0;
+                    for(let i=1; i<=end; i++) {
+                        sum+=i;
+                    }
+                    result.innerHTML = sum;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>0보다 큰 숫자를 입력받아 1부터 그 숫자까지의 합계를 출력</h1>
+    <input type="text" name="" id="end">
+    <button id='sum'>출력</button>
+    <div>합계 : <span id='result'></span></div>
+</body>
+</html>
